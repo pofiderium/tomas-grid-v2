@@ -1,0 +1,149 @@
+/* Default HTML */
+
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    background-color: rgb(31, 41, 51); /* flashbang fix (ale taký cigánsky) */
+}
+
+/* Variables */
+
+:root {
+
+    /* UI */
+    --border-radius: .3rem;
+    --border-radius-photo: 2rem;
+
+    /* UI Colors */
+    --body-background-color: rgb(31, 41, 51);
+    --box-background-color: #323F4B;
+
+    /* Font Sizes */
+
+    /* Font Colors */
+    --white-text: rgb(255, 255, 255);
+
+}
+
+/* End of Variables */
+
+/* Body */
+
+body {
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-areas: 
+    ". gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc .";
+    width: 100%;
+    height: 100%;
+    color: var(--white-text);
+    font-size: 1.5rem;
+    background-color: var(--body-background-color);
+    transition: all 1s ease;
+}
+
+/* Grid Container */
+
+.grid-container {
+    grid-area: gc;
+    display: grid;
+    grid-template-columns: 10% 37.5% 5% 37.5% 10%;
+    grid-template-areas: 
+    ". box-1 . box-2 ."
+    ". box-3 . box-4 .";
+    width: 100%;
+    min-height: 100%;
+    transition: all 1s ease;
+}
+
+    /* Grid Container -> Boxes */
+
+    .box-1 {
+        grid-area: box-1;
+    }
+
+        .box-content {
+            width: 100%;
+            height: 100%;
+        }
+
+        .my-photo {
+            width: 50%;
+            height: 50%;
+            background: url(../img/fotka.jpg) center center no-repeat;
+            background-size: cover;
+            border-radius: var(--border-radius-photo);
+        }
+
+    .box-2 {
+        grid-area: box-2;
+    }
+
+    .box-3 {
+        grid-area: box-3;
+    }
+
+    .box-4 {
+        grid-area: box-4;
+    }
+
+/* Responsivity */
+
+@media screen and (max-width: 1199.98px) {
+    body {
+        grid-template-areas: 
+        "gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc ";
+        transition: all 1s ease;
+    }
+
+    .grid-container {
+        grid-template-columns: 5% 43.75% 2.5% 43.75% 5%;
+
+        transition: all 1s ease;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    body {
+        grid-template-areas: 
+        "gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc ";
+        transition: all 1s ease;
+    }
+    
+    .grid-container {
+        grid-template-columns: 2.5% 46.875% 1.25% 46.875% 2.5%;
+        transition: all 1s ease;
+    }
+
+}
+
+@media screen and (max-width: 767.98px) {
+    body {
+        grid-template-areas: 
+        "gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc ";
+        transition: all 1s ease;
+    }
+    
+    .grid-container {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 55%);
+        grid-template-areas: 
+        "box-1"
+        "box-2"
+        "box-3"
+        "box-4";
+        width: 100% !important;
+        transition: all 1s ease;
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+    body {
+        grid-template-areas: 
+        "gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc gc ";
+    }
+    
+
+}
