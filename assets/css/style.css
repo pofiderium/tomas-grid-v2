@@ -88,6 +88,15 @@ body {
         grid-area: box-4;
     }
 
+/* Group hovers & disable hovers on non-hover devices */
+
+@media(hover: hover) and (pointer: fine) {
+    a:hover {
+        border: 1px solid red;
+        outline: 1px solid yellow;
+    }
+}
+
 /* Responsivity */
 
 @media screen and (max-width: 1199.98px) {
